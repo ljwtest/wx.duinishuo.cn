@@ -6,7 +6,7 @@ header("content-type:text/html;charset=utf-8");
 
 //define your token
 define("TOKEN", "ljw");
-echo TOKEN;die;
+
 $wechatObj = new wechatCallbackapiTest();
 $wechatObj->valid();
 

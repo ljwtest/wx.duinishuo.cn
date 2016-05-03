@@ -23,6 +23,6 @@ $memcache_config=array(
 $wechat_config=array(
 	"appID"=>"wxea88499192bb6f63",
 	"appSecret"=>"3b7981584cc9a4c0a9d4fb1725508904",
-	"token"=>"root",
+	"appOid"=>"gh_d98376962121",
 );
 	

@@ -3,89 +3,31 @@ header("content-type:text/html;charset=utf-8");
 /**
   * wechat php test
   */
+require("./myConfig.php");
+$appId		=	$wechat_config['appID'];
+$appSecret	=	$wechat_config['appSecret'];
+$appOid 	=	$wechat_config['appOid'];
+define('APPID',$appId);
+define('APPSECRET',$appSecret);
 
-//define your token
-define("TOKEN", "ljw");
-
-$wechatObj = new wechatCallbackapiTest();
-$wechatObj->valid();
-
-class wechatCallbackapiTest
-{
-	public function valid()
-    {
-        $echoStr = $_GET["echostr"];
-
-        //valid signature , option
-        if($this->checkSignature()){
-        	echo $echoStr;
-        	exit;
-        }
-    }
-
-    public function responseMsg()
-    {
-		//get post data, May be due to the different environments
-		$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
-
-      	//extract post data
-		if (!empty($postStr)){
-                /* libxml_disable_entity_loader is to prevent XML eXternal Entity Injection,
-                   the best way is to check the validity of xml by yourself */
-                libxml_disable_entity_loader(true);
-              	$postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
-                $fromUsername = $postObj->FromUserName;
-                $toUsername = $postObj->ToUserName;
-                $keyword = trim($postObj->Content);
-                $time = time();
-                $textTpl = "<xml>
-							<ToUserName><![CDATA[%s]]></ToUserName>
-							<FromUserName><![CDATA[%s]]></FromUserName>
-							<CreateTime>%s</CreateTime>
-							<MsgType><![CDATA[%s]]></MsgType>
-							<Content><![CDATA[%s]]></Content>
-							<FuncFlag>0</FuncFlag>
-							</xml>";             
-				if(!empty( $keyword ))
-                {
-              		$msgType = "text";
-                	$contentStr = "Welcome to wechat world!";
-                	$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-                	echo $resultStr;
-                }else{
-                	echo "Input something...";
-                }
-
-        }else {
-        	echo "";
-        	exit;
-        }
-    }
-		
-	private function checkSignature()
-	{
-        // you must define TOKEN by yourself
-        if (!defined("TOKEN")) {
-            throw new Exception('TOKEN is not defined!');
-        }
-        
-        $signature = $_GET["signature"];
-        $timestamp = $_GET["timestamp"];
-        $nonce = $_GET["nonce"];
-        		
-		$token = TOKEN;
-		$tmpArr = array($token, $timestamp, $nonce);
-        // use SORT_STRING rule
-		sort($tmpArr, SORT_STRING);
-		$tmpStr = implode( $tmpArr );
-		$tmpStr = sha1( $tmpStr );
-		
-		if( $tmpStr == $signature ){
-			return true;
-		}else{
-			return false;
-		}
-	}
+///获取微信access_token的方法（用文件实现)
+function get_token(){
+	if(file_exists("./wx_token") && time()-filemtime("./wx_token")<4000){
+		return file_get_contents("./wx_token");
+	}else{
+		$return=file_get_contents("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".APPID."&secret=".APPSECRET);
+		$re_obj=json_decode($return);
+		file_put_contents("./wx_token",$re_obj->access_token);		
+		return $re_obj->access_token;
+	}	
 }
 
-?>
+function get_wx_ip(){
+	$token=get_token();
+	$return=file_get_contents("https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=".$token);
+	return $return;
+}
+
+$v=json_decode(get_wx_ip(),true);
+
+var_dump($v);

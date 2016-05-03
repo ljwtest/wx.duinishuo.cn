@@ -4,9 +4,11 @@ header("content-type:text/html;charset=utf-8");
   * wechat php test
   */
 require("./myConfig.php");
-$appId		=	$wechat_config['appID'];
-$appSecret	=	$wechat_config['appSecret'];
-$appOid 	=	$wechat_config['appOid'];
+//$appId		=	$wechat_config['appID'];
+//$appSecret	=	$wechat_config['appSecret'];
+//$appOid 	=	$wechat_config['appOid'];
+$appId	 	=	"wxbfdfceba7eadb314";
+$appSecret 	=	"63581dabf6cf909540f8f2bd27f1e980";
 define('APPID',$appId);
 define('APPSECRET',$appSecret);
 
@@ -28,6 +30,12 @@ function get_wx_ip(){
 	return $return;
 }
 
-$v=json_decode(get_wx_ip(),true);
+function get_user(){
+	$token=get_token();
+	$return=file_get_contents("https://api.weixin.qq.com/cgi-bin/user/get?access_token=".$token."&next_openid=");
+	return $return;
+}
+
+$v=json_decode(get_user(),true);
 
 var_dump($v);

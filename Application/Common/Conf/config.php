@@ -1,5 +1,5 @@
 <?php
-require("/myConfig.php");
+require("./myConfig.php");
 return array(
 	//'配置项'=>'配置值'
 	// URL请求地址的模式,0：普通 1：/模式 2：去掉index.php的/模式（需要REWRITE重写技术） 3：index.php?s=/xxx/xxx/xxx这种形式

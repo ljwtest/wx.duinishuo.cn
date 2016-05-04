@@ -1,4 +1,5 @@
 #think php runtime
 /Application/Runtime/
+#需要禁止上传的配置文件
 myConfig.php
-noup.php
+

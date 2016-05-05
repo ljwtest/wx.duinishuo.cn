@@ -7,8 +7,8 @@ class IndexController extends Controller {
     	$model=M("wx_token");
     	//var_dump($model);
     	var_dump($_SERVER['PATH_INFO']);
-    	var_dump(pathinfo($_SERVER['PATH_INFO']));
-    	
+    	var_dump(pathinfo($_SERVER['PATH_INFO']))
+		echo "测试git是否能同步";    	
         $this->display();
     }
 }

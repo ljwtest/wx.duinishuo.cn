@@ -8,7 +8,7 @@ class IndexController extends Controller {
     	//var_dump($model);
     	var_dump($_SERVER['PATH_INFO']);
     	var_dump(pathinfo($_SERVER['PATH_INFO']));
-		echo "测试git是否能同步,第二次测试";    	
+		echo "测试git是否能同步,第二次测试，第三次测试HTTP_RAW_POST_DATA";    	
         $this->display();
     }
 }

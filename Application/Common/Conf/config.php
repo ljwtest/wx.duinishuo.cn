@@ -4,6 +4,8 @@ return array(
 	//'配置项'=>'配置值'
 	// URL请求地址的模式,0：普通 1：/模式 2：去掉index.php的/模式（需要REWRITE重写技术） 3：index.php?s=/xxx/xxx/xxx这种形式
 	'URL_MODEL' => 2,
+	//linux忽略大小写
+	'URL_CASE_INSENSITIVE' =>true,
 	//'URL_PATHINFO_DEPR' => '-',
 	'DB_TYPE' => 'mysql',
 	'DB_HOST' => $mysql_config['host'],

@@ -16,7 +16,7 @@ return array(
 	/********* 默认请求的地址 ***********/
 	'DEFAULT_MODULE' => 'Home',
 	"DEFAULT_CONTROLLER" => "Index",
-	"DEFAULT_ACTION" => "Index",
+	"DEFAULT_ACTION" => "index",
 	//接收到的数据使用函数过滤一下，就用于I函数
 	'DEFAULT_FILTER' => 'trim,htmlspecialchars',
 	//图片相关配置（自定义的，TP中没有）

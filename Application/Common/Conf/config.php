@@ -13,6 +13,11 @@ return array(
 	'DB_USER' => $mysql_config['user'],
 	'DB_PWD' => $mysql_config['password'],
 	//'DB_PREFIX' => 'sh_',
+	/********* 微信相关配置 ***********/
+	'APPID' => $wechat_config['appID'],
+	'APP_SECRET' => $wechat_config['appSecret'],
+	'APPOID' => $wechat_config['appOid'],
+	'MY_WX_KEY' => $wechat_config['my_key'],
 	/********* 默认请求的地址 ***********/
 	'DEFAULT_MODULE' => 'Home',
 	"DEFAULT_CONTROLLER" => "Index",

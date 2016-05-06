@@ -9,6 +9,7 @@ class IndexController extends Controller {
         	exit;
         }
 		echo "这里是微信接口测试地址";
+		echo "<hr>非WECHAT访问";
 		$model=M("wx_token");
 		$this->display();
 	}

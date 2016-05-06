@@ -10,7 +10,7 @@ class IndexController extends Controller {
     	var_dump(pathinfo($_SERVER['PATH_INFO']));
     	echo "<hr>";
     	var_dump($_GET);
-		echo "测试git是否能同步,第二次测试，第3次测试HTTP_RAW_POST_DATA"; 
+		echo "测试git是否能同步,第二次测试，测试php:input"; 
 		phpinfo();   	
         $this->display();
     }

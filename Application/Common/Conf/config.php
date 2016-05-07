@@ -7,12 +7,15 @@ return array(
 	//linux忽略大小写
 	//'URL_CASE_INSENSITIVE' =>false,
 	//'URL_PATHINFO_DEPR' => '-',
+	//*******mysql,memcache,redis,mogo等配置********//
 	'DB_TYPE' => 'mysql',
 	'DB_HOST' => $mysql_config['host'],
 	'DB_NAME' => 'wx_duinishuo',
 	'DB_USER' => $mysql_config['user'],
 	'DB_PWD' => $mysql_config['password'],
 	//'DB_PREFIX' => 'sh_',
+	'mem_host' => $memcache_config['host'],
+	'mem_port' => $memcache_config['port'],
 	/********* 微信相关配置 ***********/
 	'APPID' => $wechat_config['appID'],
 	'APP_SECRET' => $wechat_config['appSecret'],

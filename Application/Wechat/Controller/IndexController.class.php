@@ -10,7 +10,16 @@ class IndexController extends Controller {
        /**********下面是微信接口测试代码*******************/
 		echo "这里是微信接口测试地址";
 		echo "<hr>非WECHAT访问";
-		var_dump($model->get_user());
+		var_dump($model->get_token());
+		$mem=S(array(
+			    'type'=>memcache,
+			    'host'=>C('mem_host'),
+			    'port'=>C('mem_port'),
+				));
+			//$mem->tp_mem="tp_mem_test";
+		//echo $mem->tp_mem;
+		S("tp_mem",null);
+		echo S("key1");
 		$this->display();
 	}
 			

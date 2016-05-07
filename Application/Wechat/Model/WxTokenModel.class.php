@@ -37,8 +37,8 @@ class WxTokenModel extends Model
 		}
 	}
 	
-	///获取微信access_token的方法（用文件实现)
-	public function get_token(){
+	///获取微信access_token的方法（用数据库实现)
+	/*public function get_token(){
 		$appID=C('APPID');
 		$appSecret=C('APP_SECRET');
 		$appOid=C('APPOID');
@@ -50,6 +50,27 @@ class WxTokenModel extends Model
 			$re_obj=json_decode($return);
 			$data['token']=$re_obj->access_token;
 			$this->add($data);
+			return $re_obj->access_token;
+		}
+	}*/
+	///获取微信access_token的方法（用memcache实现)
+	public function get_token(){
+		$appID=C('APPID');
+		$appSecret=C('APP_SECRET');
+		$appOid=C('APPOID');
+		$mem=S(array(
+			    'type'=>memcache,
+			    'host'=>C('mem_host'),
+			    'port'=>C('mem_port'),
+			    'expire'=>6000
+				));
+		$token=$mem->wx_token;	
+		if($token){
+			return $token;
+		}else{
+			$return=file_get_contents("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appID."&secret=".$appSecret);
+			$re_obj=json_decode($return);
+			S('wx_token',$re_obj->access_token);
 			return $re_obj->access_token;
 		}
 	}

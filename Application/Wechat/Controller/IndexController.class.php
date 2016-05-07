@@ -3,17 +3,23 @@ namespace Wechat\Controller;
 use Think\Controller;
 class IndexController extends Controller {
 	public function index(){
-        $echoStr = $_GET["echostr"];
-        if($this->checkSignature()){
-        	echo $echoStr;
-        	exit;
-        }
+		//先做微信接口校验
+       $this->check_wx_connect();       
+       
 		echo "这里是微信接口测试地址";
 		echo "<hr>非WECHAT访问";
 		$model=M("wx_token");
 		var_dump($this->get_token());
 		$this->display();
 	}
+	
+	public function check_wx_connect(){
+		$echoStr = $_GET["echostr"];
+        if($this->checkSignature()){
+        	echo $echoStr;
+        	exit;
+        }
+	}	
 	//用来验证微信的校验的
 	private function checkSignature()
 	{
@@ -45,16 +51,10 @@ class IndexController extends Controller {
 		$appID=C('APPID');
 		$appSecret=C('APP_SECRET');
 		$appOid=C('APPOID');
-
-//$return=file_get_contents("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appID."&secret=".$appSecret);
-$return=file_get_contents("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxbfdfceba7eadb314&secret=63581dabf6cf909540f8f2bd27f1e980"
-);
-return $return;
 		if(file_exists("./wx_token") && time()- filemtime("./wx_token")<4000){
 			return file_get_contents("./wx_token");
 		}else{
 			$return=file_get_contents("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appID."&secret=".$appSecret);
-			return $return;
 			$re_obj=json_decode($return);
 			file_put_contents("./wx_token",$re_obj->access_token);
 			return $re_obj->access_token;

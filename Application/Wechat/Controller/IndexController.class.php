@@ -18,8 +18,9 @@ class IndexController extends Controller {
 				));
 			//$mem->tp_mem="tp_mem_test";
 		//echo $mem->tp_mem;
-		S("tp_mem",null);
-		echo S("key1");
+		S("tp_mem",array(5,6,8,9,10));
+		phpinfo();
+		var_dump($aa);
 		$this->display();
 	}
 			

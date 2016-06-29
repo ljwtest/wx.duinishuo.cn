@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-<meta name="viewport" content="width=device-width, initial-scale=0.7">
+<meta name="viewport" content="width=device-width, initial-scale=0.8">
 <title>要不留下来，要不你跟我走</title>
 
 <link rel="stylesheet" href="css/reset.css">

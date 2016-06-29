@@ -1,13 +1,16 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>想你是种病，时不时缺药</title>
+</head>
+<center>
+<form action="index.php" method="post">
+请问我喜欢的人叫什么？<br/><br/>
+<input type="text" name="st"/><br/><br/>
+<input type="submit" value="确定"/>
+</form>
+</center>
+</html>
 <?php
-header("content-type:text/html;charset=utf8");
-
-echo "hahahahahaha";
-
-
-echo "</br>houhouhouhou";
-
-echo "我在 对你说 上面改了";
-
-
-echo "我在github 上面改了";
-
+header('Content-Type:text/html; charset= utf-8');
+?>

@@ -2,14 +2,13 @@
 header('Content-Type:text/html; charset= utf-8');
 $a="";
 if(!empty($_POST["st"])){
-   $a="输入了！";
+   $a="输入不正确，请重新输入!";
    echo $a;
    if($_POST["st"]=="大脚婷"){
-      $a="成功";
-	  echo $a;
+      header("Location: st.php?st=1");
    }   
 }else{
-	$a="请输入后点击";
+	$a="请输入后点击确定!";
    echo $a;
 }
 ?>
@@ -20,7 +19,7 @@ if(!empty($_POST["st"])){
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>想你是种病，时不时犯病</title>
+<title>我忍不住，希望你爱我</title>
 
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 
@@ -35,7 +34,7 @@ if(!empty($_POST["st"])){
 		<form class="form" action="index.php" method="post">
 			<input type="text" placeholder="请输入" name="st"/>
 			<input type="submit"  value="确定"/>
-			<input style="background:none;border:0;" type="text" value="<?php echo $a; ?>" disabled="true"/>
+			<input style="color:black;background:none;border:0;" type="text" value="<?php echo $a; ?>" disabled="true"/>
 		</form>
 	</div>
 	

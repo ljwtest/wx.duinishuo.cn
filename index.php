@@ -1,16 +1,67 @@
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>想你是种病，时不时缺药</title>
-</head>
-<center>
-<form action="index.php" method="post">
-请问我喜欢的人叫什么？<br/><br/>
-<input type="text" name="st"/><br/><br/>
-<input type="submit" value="确定"/>
-</form>
-</center>
-</html>
 <?php
 header('Content-Type:text/html; charset= utf-8');
+$a="";
+if(!empty($_POST["st"])){
+   $a="输入了！";
+   echo $a;
+   if($_POST["st"]=="大脚婷"){
+      $a="成功";
+	  echo $a;
+   }   
+}else{
+	$a="请输入后点击";
+   echo $a;
+}
 ?>
+
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>想你是种病，时不时犯病</title>
+
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+<body>
+
+
+<div class="wrapper">
+
+	<div class="container">
+		<h1>请问我喜欢的人叫什么？</h1>
+		<form class="form" action="index.php" method="post">
+			<input type="text" placeholder="请输入" name="st"/>
+			<input type="submit"  value="确定"/>
+			<input style="background:none;border:0;" type="text" value="<?php echo $a; ?>" disabled="true"/>
+		</form>
+	</div>
+	
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+$('#login-button').click(function(event){
+	event.preventDefault();
+	$('form').fadeOut(500);
+	$('.wrapper').addClass('form-success');
+});
+</script>
+
+</body>
+</html>
+

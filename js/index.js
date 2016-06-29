@@ -1,4 +1,4 @@
-$(document).ready(function(){
+﻿$(document).ready(function(){
   var playlist = [{
       title:"单婷",
 	  artist:"想你是种病",

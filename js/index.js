@@ -1,19 +1,9 @@
 $(document).ready(function(){
   var playlist = [{
-      title:"NiceHidden",
-      artist:"CuPlayer.com",
-      mp3:"http://rm.sina.com.cn/wm/VZ2010050511043310440VK/music/MUSIC1005051622027270.mp3",
-      poster: "images/1.jpg"
-    },{
-      title:"Cro Magnon Man",
-      artist:"The Stark Palace",
-      mp3:"http://rm.sina.com.cn/wm/VZ2010050511043310440VK/music/MUSIC1005051622027270.mp3",
-      poster: "images/2.jpg"
-    },{
-      title:"Bubble",
-	  artist:"The Stark Palace",
-      mp3: "http://rm.sina.com.cn/wm/VZ2010050511043310440VK/music/MUSIC1005051622027270.mp3",
-      poster: "images/3.jpg"
+      title:"单婷",
+	  artist:"想你是种病",
+      mp3: "st.mp3",
+      poster: "images/st.jpg"
   }];
   
   var cssSelector = {
@@ -27,5 +17,6 @@ $(document).ready(function(){
   };
   
   var myPlaylist = new jPlayerPlaylist(cssSelector, playlist, options);
+  
   
 });

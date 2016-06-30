@@ -2,7 +2,7 @@
 header('Content-Type:text/html; charset= utf-8');
   if(!empty($_POST["erxuan"])){
    $str="当前时间:".date('y-m-d h:i:s',time())."\r\n她的IP地址是:".$_SERVER["REMOTE_ADDR"]."\r\n她选择了(".$_POST["erxuan"].")！\r\n\r\n";
-   $fh=fopen(".\lj.txt","a");
+   $fh=fopen("./lj.txt","a");
    fwrite($fh,$str);
    fclose($fh);
 

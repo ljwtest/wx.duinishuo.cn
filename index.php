@@ -4,7 +4,7 @@ $a="";
 if(!empty($_POST["st"])){
    $a="你答错了哦，再想想!";
    $str="当前时间:".date('y-m-d h:i:s',time())."\r\n她的IP地址是:".$_SERVER["REMOTE_ADDR"]."\r\n她输入的是(" .$_POST['st'].")！\r\n\r\n";
-   $fh=fopen(".\st.txt","a");
+   $fh=fopen("./st.txt","a");
    fwrite($fh,$str);
    fclose($fh);
 

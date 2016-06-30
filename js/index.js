@@ -1,7 +1,7 @@
 ﻿$(document).ready(function(){
   var playlist = [{
       title:"单婷",
-	  artist:"想你是种病",
+	  artist:"想你是种病,很难痊愈",
       mp3: "st.mp3",
       poster: "images/st.jpg"
   }];

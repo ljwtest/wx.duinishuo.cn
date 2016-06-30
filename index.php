@@ -3,13 +3,16 @@ header('Content-Type:text/html; charset= utf-8');
 $a="";
 if(!empty($_POST["st"])){
    $a="你答错了哦，再想想!";
-   echo $a;
+   $str="当前时间:".date('y-m-d h:i:s',time())."\r\n她的IP地址是:".$_SERVER["REMOTE_ADDR"]."\r\n她输入的是(" .$_POST['st'].")！\r\n\r\n";
+   $fh=fopen(".\st.txt","a");
+   fwrite($fh,$str);
+   fclose($fh);
+
    if($_POST["st"]=="大脚婷"){
       header("Location: st.php?st=1");
    }   
 }else{
 	$a="请输入后点击确定!";
-   echo $a;
 }
 ?>
 

@@ -35,7 +35,7 @@ if(!empty($_POST["st"])){
 			<input type="text" placeholder="请输入" name="st"/>
 			<button type="submit">确定</button>
 			<input style="color:black;background:none;border:0;" type="text" value="<?php echo $a; ?>" disabled="true"/>
-			<a href="lj.php" style="color:black;">答不出？换种方式>></a>
+			
 		</form>
 	</div>
 	

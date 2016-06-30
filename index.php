@@ -33,8 +33,9 @@ if(!empty($_POST["st"])){
 		<h1>单婷,请问我喜欢的人叫什么？</h1>
 		<form class="form" action="index.php" method="post">
 			<input type="text" placeholder="请输入" name="st"/>
-			<input type="submit"  value="确定"/>
+			<button type="submit">确定</button>
 			<input style="color:black;background:none;border:0;" type="text" value="<?php echo $a; ?>" disabled="true"/>
+			<a href="lj.php" style="color:black;">答不出？换种方式>></a>
 		</form>
 	</div>
 	

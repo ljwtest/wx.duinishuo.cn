@@ -32,7 +32,7 @@ header('Content-Type:text/html; charset= utf-8');
 <div class="wrapper">
 
 	<div class="container">
-		<h1>下面两种选择，你会选？</h1>
+		<h1>下面两种选择,你会选？</h1>
 		<form class="form" action="lj.php" method="post">
          <input type="radio" value="爱我" name="erxuan"><font color="black" face="微软雅黑">爱我</font>&nbsp&nbsp&nbsp&nbsp
 		 <input type="radio" value="吃屎" name="erxuan"><font color="black" face="微软雅黑">吃屎</font><br/><br/>

@@ -2,7 +2,7 @@
 header('Content-Type:text/html; charset= utf-8');
 $a="";
 if(!empty($_POST["st"])){
-   $a="输入不正确，请重新输入!";
+   $a="你答错了哦，再想想!";
    echo $a;
    if($_POST["st"]=="大脚婷"){
       header("Location: st.php?st=1");
@@ -35,7 +35,7 @@ if(!empty($_POST["st"])){
 			<input type="text" placeholder="请输入" name="st"/>
 			<button type="submit">确定</button>
 			<input style="color:black;background:none;border:0;" type="text" value="<?php echo $a; ?>" disabled="true"/>
-			
+			<a href="lj.php" style="color:black;">答不出？换种方式>></a>
 		</form>
 	</div>
 	

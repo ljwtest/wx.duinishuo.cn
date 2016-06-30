@@ -1,4 +1,4 @@
-<?php
+О╩©<?php
   if(empty($_GET["st"]) || ($_GET["st"])!="1"){
     header("Location: index.php");
   }
@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 <meta name="viewport" content="width=device-width, initial-scale=0.8">
-<title>р╙╡╩аТобю╢ё╛р╙╡╩дЦ╦Знрвъ</title>
+<title>Х╕│Д╦█Г∙≥Д╦▀Ф²╔О╪▄Х╕│Д╦█Д╫═Х╥÷Ф┬▒Х╣╟</title>
 
 <link rel="stylesheet" href="css/reset.css">
 

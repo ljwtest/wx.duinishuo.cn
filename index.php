@@ -33,7 +33,7 @@ if(!empty($_POST["st"])){
 <div class="wrapper">
 
 	<div class="container">
-		<h1>单婷,请问我喜欢的人叫什么？</h1>
+		<h1>请问我喜欢的人叫什么？</h1>
 		<form class="form" action="index.php" method="post">
 			<input type="text" placeholder="请输入" name="st"/>
 			<button type="submit">确定</button>

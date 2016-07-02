@@ -1,2 +1,3 @@
 <?php
 header("location:/160702/index.php");
+//¿²âÊÔÄ¿Â¼

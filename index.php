@@ -1,5 +1,4 @@
 <?php
-echo "lijianwen";die;
 header('Content-Type:text/html; charset= utf-8');
 $a="";
 if(!empty($_POST["st"])){
